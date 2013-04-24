@@ -1,0 +1,21 @@
+#INPUT#
+
+timeit("""
+integers = [i+1 for i in xrange(1000)]
+sum(x*x for x in integers)""")
+
+#Results#
+625 loops, best of 3: 659 µs per loop
+333833500
+
+#INPUT (Cythonized)#
+
+%timeit
+%cython
+integers = [i+1 for i in xrange(1000)]
+sum(x*x for x in integers)
+
+#Results#
+
+CPU time: 0.06 s,  Wall time: 1.80 s
+__sagenb_s...3_code_sage11_spyx.c   __sagenb_s...ode_sage11_spyx.html
