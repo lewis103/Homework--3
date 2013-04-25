@@ -1,6 +1,6 @@
 %timeit
 %cython #Ran code in cython# 
-cpdef perfect (n): # added cpdef#
+cpdef perfect (long n): # added cpdef#
   add = 0
 	for i in xrange (1, n): # tried using the xrange function vs range#
 		if n % i == 0:
