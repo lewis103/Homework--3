@@ -1,0 +1,39 @@
+#INPUT#
+
+def prime_num(n):
+    int = set(range(n, 1, -1))
+    prime = []
+    while int:
+        p = int.pop()
+        prime.append(p)
+        int.difference_update(set(range(p*2, n+1, p)))
+    return prime
+
+timeit("prime_num (43)")
+
+#Result#
+
+[2,3,5,7,11,13,17,19,23,29,31,37,41,43]
+625 loops, best of 3: 252 µs per loop
+
+#INPUT (Cythonized)#
+
+%timeit
+%cython
+cpdef prime_num(n):
+    int = set(range(n, 1, -1))
+    prime = []
+    while int:
+        p = int.pop()
+        prime.append(p)
+        int.difference_update(set(range(p*2, n+1, p)))
+    return prime
+
+timeit("prime_num (43)")
+
+#Result#
+
+[2,3,5,7,11,13,17,19,23,29,31,37,41,43]
+625 loops, best of 3: 21.7 µs per loop
+
+
