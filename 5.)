@@ -1,0 +1,32 @@
+#INPUT#
+
+timeit("""
+import numpy
+a=((1,  2, 3,  1), # matrix A #
+   (2,  5, 1,  2),
+   (3,  1, 9,  3),
+   (1,  2, 3,  11))
+numpy.linalg.det(a)""")
+
+#Result#
+
+−250.0
+625 loops, best of 3: 129 µs per loop
+
+#INPUT (Cythonized)#
+
+%timeit
+%cython
+import numpy
+a=((1,  2, 3,  1), # matrix A #
+   (2,  5, 1,  2),
+   (3,  1, 9,  3),
+   (1,  2, 3,  11))
+numpy.linalg.det(a)
+
+#Result#
+
+-250.0
+CPU time: 0.07 s,  Wall time: 1.52 s
+__sagenb_s...3_code_sage11_spyx.c   __sagenb_s...ode_sage11_spyx.html
+
