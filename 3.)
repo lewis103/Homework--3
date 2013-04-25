@@ -20,7 +20,7 @@ timeit("prime_num (43)")
 
 %timeit
 %cython
-cpdef prime_num(n):
+cpdef prime_num(long n):
     int = set(range(n, 1, -1))
     prime = []
     while int:
@@ -34,6 +34,6 @@ timeit("prime_num (43)")
 #Result#
 
 [2,3,5,7,11,13,17,19,23,29,31,37,41,43]
-625 loops, best of 3: 21.7 µs per loop
+625 loops, best of 3: 11.7 µs per loop
 
 
