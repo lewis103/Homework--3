@@ -18,7 +18,7 @@ I then simply ran it in cython and it ran at the following speed:
 Next I used cpdef with cython and it ran at the following speed:
 625 loops, best of 3: 141 µs per loop (seems like it should have been faster??)
 
-I found that using xrange shoul be faster than using range so I implemented that and it 
+I found that using xrange should be faster than using range so I implemented that and it 
 ran at the following speed:
 625 loops, best of 3: 134 µs per loop
 
